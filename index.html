@@ -3,8 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Random insults generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
+
+<div id="title">
+    <h1>Random insults generator</h1>
+    <h3>Because sometimes calling someone stupid is just not enough</h3>
+
+    <p>
+        The inspiration came from <a href="https://www.reddit.com/r/interestingasfuck/comments/1f8gtk6/whats_your_favorite_curse_word_on_reddit/">reddit post</a>
+        referencing <a href="https://colinmorris.github.io/blog/compound-curse-words">work by Colin Moris</a> that analysed frequency of use of compound curse words.
+    </p>
+    <p>
+        For more visit <i class="fab fa-github"></i> <a href="https://github.com/colinmorris/pejorative-compounds/tree/master">colinmorris/pejorative-compounds</a>
+    </p>
+</div>
+
+<div id="options">
+    <fieldset>
+        <legend><i class="fa-solid fa-gear"></i> Options:</legend>
+
+        <label class="switch" title="Include words commonly considered NSFW (subjective choice)">
+            <input id="nsfwToggle" name="nsfw" type="checkbox">
+            <span>NSFW</span>
+        </label>
+
+        <label class="switch" title="Use additional curse words beyond the original set">
+            <input id="extendedSetToggle" name="extended" type="checkbox">
+            <span>Extended set</span>
+        </label>
+
+        <label class="switch" style="--glow-color: orange;" title="A tribute to the last US presidential elections">
+            <input id="orangeToggle" name="orange" type="checkbox" onchange="orangeToggle(this)">
+            <span class="pumpkin">&#x1F383</span>
+        </label>
+    </fieldset>
+</div>
+
+<br>
+
+<button type="button" class="generate-btn" onclick="generate()">Generate</button>
+
+<div id="output" style="visibility: hidden">
+    <p>
+        Your new insult (out of <span id="count"></span> possible combinations):
+    </p>
+
+    <h1 class="target"></h1>
+
+    <p>
+        As in:<br>
+        <div id="examples"></div>
+    </p>
+</div>
+
 
 </body>
 </html>

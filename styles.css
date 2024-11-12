@@ -1,0 +1,120 @@
+:root {
+  --glow-color: #00ffea; /* Parametrize glow color for different elements */
+}
+
+body {
+  background: linear-gradient(#1676dc, white) no-repeat;
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+  min-height: 95vh;
+  font-size: 1.1rem;
+}
+
+#title h1 {
+  font-size: xxx-large;
+  color: aliceblue;
+  text-shadow: 3px 3px 3px #a1a1a1;
+}
+
+#title h3 {
+  font-size: x-large;
+  color: aliceblue;
+}
+
+#options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#options fieldset {
+  text-align: left;
+  width: fit-content;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+h1.target {
+  font-size: xxx-large;
+}
+
+/* Toggle buttons */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch input + span {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.switch input:checked + span {
+  animation: glow 300ms forwards; /* Use glow to indicate toggled option */
+}
+
+/* Smooth lighting up of the glow effect*/
+@keyframes glow {
+  from {
+    color: #000000;
+    text-shadow: none;
+  }
+  to {
+    color: #ffffff;
+    font-weight: 400;
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px var(--glow-color),
+      0 0 30px var(--glow-color),
+      0 0 40px var(--glow-color),
+      0 0 50px var(--glow-color),
+      0 0 60px var(--glow-color);
+  }
+}
+
+/* General button styles */
+.generate-btn {
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #1676dc;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.generate-btn:hover {
+  background-color: #0055b0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px); /* Lift effect */
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+}
+
+/* Active effect (when clicked) */
+.generate-btn:active {
+  transform: translateY(0); /* Return to neutral position */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.1s ease-in-out; /* Speed up animation on click */
+  text-shadow: none;
+}
+
+#examples {
+  font-size: x-large;
+}
+
+.orangeMod {
+  display: none;
+  text-shadow:
+    0 0 10px orange,
+    0 0 20px orange;
+}
